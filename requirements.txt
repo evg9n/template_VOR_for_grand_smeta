@@ -1,0 +1,5 @@
+bs4==0.0.1
+lxml==4.9.1
+openpyxl==3.0.10
+pyautogui==0.9.53
+PySimpleGUI==4.60.4
