@@ -14,11 +14,27 @@ log = logging.getLogger()
 
 
 def border(cell: worksheet) -> None:
-    black = Side(border_style='thin')  # Установка стиял границ тонкие и черные
+    """
+    Установка границ в ячейке excel
+
+    :param cell: ячейка excel
+    :type cell: worksheet
+    :return: None
+    """
+    black = Side(border_style='thin')  # Установка стиля границ тонкие и черные
     cell.border = Border(top=black, bottom=black, left=black, right=black)  # Установка всех границ
 
 
 def write_table(activ: worksheet, table: Union[List, Dict]) -> None:
+    """
+    Заполнение таблицы
+
+    :param activ: Активный лист excel
+    :type activ: worksheet
+    :param table: Данные для таблицы
+    :type: table:list, dict
+    :return: None
+    """
     row = 18
 
     for chapter in table:
@@ -58,6 +74,17 @@ def write_table(activ: worksheet, table: Union[List, Dict]) -> None:
 
 
 def write_date(sheet: worksheet, row: int, col: int) -> None:
+    """
+    Запись даты
+
+    :param sheet: активный лист excel
+    :type sheet: worksheet
+    :param row: запись
+    :type row:int
+    :param col: поле
+    :type col:int
+    :return:None
+    """
 
     months = {
         1: 'января', 2: 'февраля', 3: 'марта', 4: 'апреля', 5: 'мая', 6: 'июня',
@@ -73,6 +100,13 @@ def write_date(sheet: worksheet, row: int, col: int) -> None:
 
 
 def add_history(name: str) -> None:
+    """
+    Перемещение сметы в директорию "history"
+
+    :param name: имя сметы
+    :type name:str
+    :return: None
+    """
 
     if not path.exists('history'):
         mkdir('history')
@@ -81,6 +115,17 @@ def add_history(name: str) -> None:
 
 
 def save_excel(name: str, name_form: str, info_smeta: Union[List, Dict]) -> None:
+    """
+    Формирование ecxel файла
+
+    :param name: имя сметы
+    :type name: str
+    :param name_form: имя формы
+    :type name_form: str
+    :param info_smeta: данные сметы
+    :type info_smeta:list, dict
+    :return: None
+    """
 
     # print(dumps(info_smeta, indent=4, ensure_ascii=False))
 

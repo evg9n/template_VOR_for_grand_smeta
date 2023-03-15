@@ -1,6 +1,5 @@
 import os
 from os.path import join
-from typing import List
 from zipfile import ZipFile
 from re import sub
 from logging import getLogger
@@ -10,6 +9,15 @@ log = getLogger()
 
 
 def check_file(name_smeta: str) -> str:
+    """
+    Проверка. Сметный ли это файл?
+
+    :param name_smeta: Имя сметного файла
+    :type name_smeta:str
+    :return: Возвращает name
+    :rtype: str
+    :exception: KeyError, FileExistsError, TypeError
+    """
 
     path = join(r'download')
 

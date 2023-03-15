@@ -10,7 +10,6 @@ from time import time
 import logging
 from os import mkdir, path, listdir
 
-
 logger = logging.getLogger()
 logging.basicConfig(filename=f'logs.log',
                     filemode='a',
@@ -20,6 +19,14 @@ logging.basicConfig(filename=f'logs.log',
 
 
 def move_file(file: str, dir_move: str):
+    """
+    Перемещение файла
+    :param file: Имя файла
+    :type file: str
+    :param dir_move: Путь куда переместить
+    :type dir_move:str
+    :return:
+    """
     zip_file = sub('.gsfx', '.zip', file)
     xml_file = sub('.gsfx', '.xml', file)
 

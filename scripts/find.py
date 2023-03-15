@@ -5,6 +5,14 @@ from typing import Union, Dict, List
 
 
 def get_description(bs: BeautifulSoup) -> Dict:
+    """
+    Получение описаний
+
+    :param bs: XML-файл
+    :type bs: BeautifulSoup
+    :return: Возвращает словарь с описаниями
+    :rtype: dict
+    """
 
     info_smeta = {
         'объект': '',
@@ -55,6 +63,14 @@ def get_description(bs: BeautifulSoup) -> Dict:
 
 
 def get_table(bs: BeautifulSoup) -> Union[List, Dict]:
+    """
+    Получение таблицы
+
+    :param bs: XML-файл
+    :type bs: BeautifulSoup
+    :return: Возвращает словарь либо список таблицы
+    :rtype:dict, list
+    """
     count = 1
 
     table = list()
@@ -101,6 +117,14 @@ def get_table(bs: BeautifulSoup) -> Union[List, Dict]:
 
 
 def find(name_smeta: str) -> Union[List, Dict]:
+    """
+    Поиск данных для формирования вывода формы в excell
+
+    :param name_smeta: Имя сметы без расширения
+    :type name_smeta:str
+    :return: Найденые данные
+    :rtype:list, dict
+    """
 
     path = join('download', f'{name_smeta}.xml')
 
